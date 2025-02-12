@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng WebView</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.js"></script>
+    <script src="code.js"></script>
+</head>
+<body>
+<!-- Giao diện chính -->
+<div id="mainMenu">
+    <h1>Chọn chức năng</h1>
+    <button onclick="showSection('infoSection')">Thông tin cá nhân</button>
+    <button onclick="showSection('musicSection')">Phát nhạc</button>
+    <button onclick="showSection('videoSection')">Xem video</button>
+</div>
+
+<!-- Giao diện thông tin cá nhân -->
+<div id="infoSection" class="hidden">
+    <h2>Thông tin cá nhân</h2>
+    <p id="info"></p>
+    <img src="avatar.jpg" alt="Ảnh đại diện" width="200">
+    <button onclick="showSection('mainMenu')">Quay lại</button>
+</div>
+
+<!-- Giao diện phát nhạc -->
+<div id="musicSection" class="hidden">
+    <h2>Phát nhạc</h2>
+    <audio id="audioPlayer" controls>
+        <source src="audio.mp3" type="audio/mpeg">
+        Trình duyệt không hỗ trợ audio.
+    </audio>
+    <button onclick="showSection('mainMenu')">Quay lại</button>
+</div>
+
+<!-- Giao diện phát video -->
+<div id="videoSection" class="hidden">
+    <h2>Xem video</h2>
+    <video id="videoPlayer" width="300" controls>
+        <source src="video.mp4" type="video/mp4">
+        Trình duyệt không hỗ trợ video.
+    </video>
+    <button onclick="showSection('mainMenu')">Quay lại</button>
+</div>
+
+<script>
+    function showSection(sectionId) {
+        document.getElementById("mainMenu").classList.add("hidden");
+        document.getElementById("infoSection").classList.add("hidden");
+        document.getElementById("musicSection").classList.add("hidden");
+        document.getElementById("videoSection").classList.add("hidden");
+
+        document.getElementById(sectionId).classList.remove("hidden");
+
+        if (sectionId === "infoSection") {
+            document.getElementById("info").innerText = Android.getPersonalInfo();
+        }
+    }
+</script>
+</body>
+</html>
