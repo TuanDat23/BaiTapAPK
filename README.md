@@ -9,6 +9,7 @@
 - B4: Tạo giao diện webview trong activity_main.xml để hiển thị trang html đã thêm vào trong assets.
 - B5: Tạo khai báo đối tượng webView và ánh xá đến giao diện. Cấu hình WebView Bật JavaScript và kết nối Java với JavaScript để truyền dữ liệu từ Android sang webview.
 - Kết quả:
+  
 ![image](https://github.com/user-attachments/assets/38dab73d-3521-4963-b4d7-25574ed58b59)
 
 ![image](https://github.com/user-attachments/assets/b27eb4ba-825c-4eeb-b58b-5c7030f57648)
